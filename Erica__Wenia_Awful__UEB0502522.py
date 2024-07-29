@@ -12,12 +12,19 @@ def calculate_bill(account_number, customer_type, premium_channels, basic_connec
             basic_fee = 75.00 + (5.00 * (basic_connections - 10))
         
         bill = 15.00 + basic_fee + (50.00 * premium_channels)
+        
+        
 
     return bill
 
 # Main Program
+print("__________CABLE BILL CALCULATOR__________\n")
 print("This program computes a cable bill.")
-account_number = int(input("Enter account number (an integer): "))
+try:
+    
+    account_number = int(input("Enter account number (an integer): "))
+except: print("Invalid input. Please enter valid  accountnumber or customer type!.")
+    
 customer_type = input("Enter customer type (R/r for Residential, B/b for Business): ")
 premium_channels = int(input("Enter the number of premium channels: "))
 
@@ -31,5 +38,9 @@ else:
 total_bill = calculate_bill(account_number, customer_type, premium_channels, basic_connections)
 
 # Display the results
+print("__________Your Information__________\n")
+
+print("______________________________________")
 print(f"\nCustomer's account number: {account_number}")
 print(f"Billing amount: ¢{total_bill:.2f}")
+print("______________________________________\n")
