@@ -19,26 +19,31 @@ def calculate_bill(account_number, customer_type, premium_channels, basic_connec
 
 # Main Program
 print("__________CABLE BILL CALCULATOR__________\n")
+
+print("______________________________________")
 print("This program computes a cable bill.")
 try:
     
     account_number = int(input("Enter account number (an integer): "))
 except: print("Invalid input. Please enter valid  accountnumber or customer type!.")
     
-customer_type = input("Enter customer type (R/r for Residential, B/b for Business): ")
+customer_type = input("Enter customer type (R/r for Residential, or B/b for Business): ")
 premium_channels = int(input("Enter the number of premium channels: "))
+
 
 # For business customers, ask for number of basic connections
 if customer_type in ['B', 'b']:
     basic_connections = int(input("Enter the number of basic service connections: "))
 else:
     basic_connections = 0  # Default for residential customers
+print("______________________________________")
+
 
 # Calculate the bill
 total_bill = calculate_bill(account_number, customer_type, premium_channels, basic_connections)
 
 # Display the results
-print("__________Your Information__________\n")
+print("\n          Your Information")
 
 print("______________________________________")
 print(f"\nCustomer's account number: {account_number}")
